@@ -1,139 +1,40 @@
-
-      <section class="cost">
-        <div class="cost__container container">
-          <div class="cost__info">
-            <div class="cost__top">
-              <div class="cost__title">
-                <h2>
-                  <?php echo get_field('cost_title'); ?>
-                </h2>
-                <p>
-                  <?php echo get_field('cost_text_1'); ?>
-                </p>
-              </div>
-              <p class="cost__text">
-                  <?php echo get_field('cost_text'); ?>
-              </p>
-            </div>
-            <div class="cost__svg">
-              <svg viewBox="0 0 296 261">
-                <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#select"></use>
-              </svg>
-            </div>
-            <div class="cost__bottom">
-              <span class="cost__fps">
-                <?php echo get_field('cost_text_2'); ?>
-              </span>
-              <div class="cost__quality">
-                <span class="cost__4k">
-                  <?php echo get_field('cost_text_3'); ?>
-                </span>
-                <span class="cost__hd">
-                  <?php echo get_field('cost_text_4'); ?>
-                </span>
-              </div>
-            </div>
-          </div>
-          
-          <!-- <div class="cost__items">
-            <?php 
-            $currency = get_field('cost_currency') ?: '$';
-            $item1 = get_field('cost_item_1');
-            if ($item1):
-              $image = $item1['image'];
-              $url = $item1['image']['url'];
-              $base = pathinfo($url, PATHINFO_FILENAME);
-              $dir = dirname($url);
-              ?>
-            // --------- КАРТОЧКА 1 ----------
-            <div class="cost__item">
-              <header class="cost__item-header">
-                <div class="cost__item-title">
-                  <?php echo esc_html($item1['title']); ?>
-                </div>
-                <div class="cost__item-price">
-                  <?php echo esc_html($item1['price'] . $currency); ?>
-                </div>
-              </header>
-              <div class="cost__item-image corner-border" data-src="<?php echo get_template_directory_uri(); ?>/images/price-portrait.png">
-                <span class="corner top-left"></span>
-                <span class="corner top-right"></span>
-                <span class="corner bottom-left"></span>
-                <span class="corner bottom-right"></span>
-                <picture>
-                  <source srcset="<?php echo esc_url($dir . '/' . $base . '.avif'); ?>" type="image/avif">
-                  <source srcset="<?php echo esc_url($dir . '/' . $base . '.webp'); ?>" type="image/webp">
-                  <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
-                </picture>
-              </div>
-            </div>
-            <?php endif; ?>
-            <div class="cost__item">
-              <header class="cost__item-header">
-                <div class="cost__item-title">
-                  
-                </div>
-                <div class="cost__item-price">
-                  
-                </div>
-              </header>
-              <div class="cost__item-image corner-border" data-src="<?php echo get_template_directory_uri(); ?>/images/price-landscape.png">
-                <span class="corner top-left"></span>
-                <span class="corner top-right"></span>
-                <span class="corner bottom-left"></span>
-                <span class="corner bottom-right"></span>
-                <picture>
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-landscape.avif" type="image/avif">
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-landscape.webp" type="image/webp">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/price-landscape.png" alt="">
-                </picture>
-              </div>
-            </div>
-            <div class="cost__item">
-              <header class="cost__item-header">
-                <div class="cost__item-title">
-
-                </div>
-                <div class="cost__item-price">
-                  
-                </div>
-              </header>
-              <div class="cost__item-image corner-border" data-src="<?php echo get_template_directory_uri(); ?>/images/price-fashion.png">
-                <span class="corner top-left"></span>
-                <span class="corner top-right"></span>
-                <span class="corner bottom-left"></span>
-                <span class="corner bottom-right"></span>
-                <picture>
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-fashion.avif" type="image/avif">
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-fashion.webp" type="image/webp">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/price-fashion.png" alt="">
-                </picture>
-              </div>
-            </div>
-            <div class="cost__item">
-              <header class="cost__item-header">
-                <div class="cost__item-title">
-                  
-                </div>
-                <div class="cost__item-price">
-                  
-                </div>
-              </header>
-              <div class="cost__item-image corner-border" data-src="<?php echo get_template_directory_uri(); ?>/images/price-street.png">
-                <span class="corner top-left"></span>
-                <span class="corner top-right"></span>
-                <span class="corner bottom-left"></span>
-                <span class="corner bottom-right"></span>
-                <picture>
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-street.avif" type="image/avif">
-                  <source srcset="<?php echo get_template_directory_uri(); ?>/images/price-street.webp" type="image/webp">
-                  <img src="<?php echo get_template_directory_uri(); ?>/images/price-street.png" alt="">
-                </picture>
-              </div>
-            </div>
-          </div> -->
-<div class="cost__items">
-    <?php
+<section class="cost">
+  <div class="cost__container container">
+    <div class="cost__info">
+      <div class="cost__top">
+        <div class="cost__title">
+          <h2>
+            <?php echo get_field('cost_title'); ?>
+          </h2>
+          <p>
+            <?php echo get_field('cost_text_1'); ?>
+          </p>
+        </div>
+        <p class="cost__text">
+          <?php echo get_field('cost_text'); ?>
+        </p>
+      </div>
+      <div class="cost__svg">
+        <svg viewBox="0 0 296 261">
+          <use xlink:href="<?php echo get_template_directory_uri(); ?>/icons/sprite.svg#select"></use>
+        </svg>
+      </div>
+      <div class="cost__bottom">
+        <span class="cost__fps">
+          <?php echo get_field('cost_text_2'); ?>
+        </span>
+        <div class="cost__quality">
+          <span class="cost__4k">
+            <?php echo get_field('cost_text_3'); ?>
+          </span>
+          <span class="cost__hd">
+            <?php echo get_field('cost_text_4'); ?>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="cost__items">
+      <?php
     $currency = get_field('cost_currency') ?: '$';
     $item_keys = ['cost_item_1', 'cost_item_2', 'cost_item_3', 'cost_item_4'];
     $image_names = [
@@ -165,25 +66,29 @@
         $dir   = dirname($url);
         $data_src_name = $image_names[$key];
     ?>
-    <div class="cost__item">
+      <div class="cost__item">
         <header class="cost__item-header">
-            <div class="cost__item-title"><?php echo esc_html($item['title']); ?></div>
-            <div class="cost__item-price"><?php echo esc_html($item['price'] . $currency); ?></div>
+          <div class="cost__item-title">
+            <?php echo esc_html($item['title']); ?>
+          </div>
+          <div class="cost__item-price">
+            <?php echo esc_html($item['price'] . $currency); ?>
+          </div>
         </header>
-        <div class="cost__item-image corner-border" 
-            data-src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $data_src_name; ?>.png">
-            <span class="corner top-left"></span>
-            <span class="corner top-right"></span>
-            <span class="corner bottom-left"></span>
-            <span class="corner bottom-right"></span>
-            <picture>
-                <source srcset="<?php echo esc_url($dir . '/' . $base . '.avif'); ?>" type="image/avif">
-                <source srcset="<?php echo esc_url($dir . '/' . $base . '.webp'); ?>" type="image/webp">
-                <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($image_data['alt']); ?>">
-            </picture>
+        <div class="cost__item-image corner-border"
+          data-src="<?php echo get_template_directory_uri(); ?>/images/<?php echo $data_src_name; ?>.png">
+          <span class="corner top-left"></span>
+          <span class="corner top-right"></span>
+          <span class="corner bottom-left"></span>
+          <span class="corner bottom-right"></span>
+          <picture>
+            <source srcset="<?php echo esc_url($dir . '/' . $base . '.avif'); ?>" type="image/avif">
+            <source srcset="<?php echo esc_url($dir . '/' . $base . '.webp'); ?>" type="image/webp">
+            <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($image_data['alt']); ?>">
+          </picture>
         </div>
+      </div>
+      <?php endforeach; ?>
     </div>
-    <?php endforeach; ?>
-</div>
-        </div>
-      </section>
+  </div>
+</section>

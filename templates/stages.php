@@ -2,53 +2,25 @@
       <section class="stages">
         <div class="stages__container container">
           <h2 class="stages__title">
-            Stages of work
+            <?php echo get_field('stages_title'); ?>
           </h2>
           <ol class="stages__list">
-            <li class="stages__item" data-elem="1">
+            <?php $stages_keys = ['stages_item_1', 'stages_item_2', 'stages_item_3', 'stages_item_4', 'stages_item_5',];
+              $counter = 0;
+              foreach ($stages_keys as $key) :
+              $item = get_field($key);
+              if (!$item) continue;
+              $counter++;
+              ?>
+              <li class="stages__item" data-elem="<?php echo $counter; ?>">
               <h4 class="stages__item-title">
-                Introduction and discussion
+                <?php echo esc_html($item['title']); ?>
               </h4>
               <p class="stages__item-desc font-secondary">
-                We start by discussing your ideas, goals, and preferences. It helps me understand what mood and style
-                you want to convey in your photos.
+                <?php echo esc_html($item['text']); ?>
               </p>
             </li>
-            <li class="stages__item" data-elem="2">
-              <h4 class="stages__item-title">
-                Concept development
-              </h4>
-              <p class="stages__item-desc font-secondary">
-                Based on our conversation, I'm developing a shooting concept, including location selection, image
-                selection, and creating a mudboard (if necessary).
-              </p>
-            </li>
-            <li class="stages__item" data-elem="3">
-              <h4 class="stages__item-title">
-                Taking photos
-              </h4>
-              <p class="stages__item-desc font-secondary">
-                On the day of shooting, I create a comfortable and creative atmosphere so that you can relax and enjoy
-                the process. We work together to capture the best moments.
-              </p>
-            </li>
-            <li class="stages__item" data-elem="4">
-              <h4 class="stages__item-title">
-                Photo selection and processing
-              </h4>
-              <p class="stages__item-desc font-secondary">
-                After shooting, I carefully select the best shots and begin professional processing to emphasize the
-                beauty and expressiveness of each photo.
-              </p>
-            </li>
-            <li class="stages__item" data-elem="5">
-              <h4 class="stages__item-title">
-                Transfer of the finished material
-              </h4>
-              <p class="stages__item-desc font-secondary">
-                You get high-resolution photos ready for publication and printing.
-              </p>
-            </li>
+            <?php endforeach; ?>
           </ol>
         </div>
         <div class="stages__images">

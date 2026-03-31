@@ -20,7 +20,6 @@
    <meta name="twitter:description" content="Landing page for a professional photographer.">
    <!-- <meta name="twitter:image" content="https://michelle-black.com/images/og-image.jpg"> -->
 
-   <title>Michelle Black</title>
    <?php wp_head(); ?>
 </head>
 
@@ -34,18 +33,27 @@
             <span class="corner top-right"></span>
             <span class="corner bottom-left"></span>
             <span class="corner bottom-right"></span>
-            <a href="#" aria-label="Go to homepage">Michelle Black</a>
+            <a href="<?php echo esc_url(home_url('/')); ?>" aria-label="Go to homepage">
+              <?php
+                $page_id = get_option('page_on_front');
+                $page_logo = get_field('header_logo', $page_id);
+                echo $page_logo ? esc_html($page_logo) : get_bloginfo('name');
+              ?>
+            </a>
           </div>
         </div>
         <div class="header__right" id="mobile-menu" aria-hidden="false">
           <nav class="header__nav" aria-label="Navigation menu">
-            <ul class="header__items" id="mobile-menu">
-              <li class="header__item"><a href="#about">About me</a></li>
-              <li class="header__item"><a href="#gallery">My work</a></li>
-              <li class="header__item"><a href="#footer">Contacts</a></li>
-            </ul>
+            <?php 
+            wp_nav_menu(array(
+              'theme_location' => 'header-menu', // ID для functions.php
+              'container'      => false,         // Обёртка nav
+              'menu_class'     => 'header__items', // Класс для списка ul
+              'menu_id'        => 'mobile-menu',    // id для ul
+              'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+            )); 
+          ?>
           </nav>
-
           <div class="header__connect corner-border">
             <button class="header__btn" aria-label="Select a date for booking" type="button">
               Select a date

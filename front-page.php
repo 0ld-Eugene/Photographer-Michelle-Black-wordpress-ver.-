@@ -1,9 +1,12 @@
+/*
+* Template Name: Main page
+*/
 <?php get_header(); ?>
 
 <div class="content">
     <?php
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
+    if (have_posts()) :
+        while (have_posts()) : the_post();
             the_content();
         endwhile;
     endif;
@@ -19,9 +22,9 @@
 
 <div class="overlay"></div>
 <div class="modal-cost">
-   <div class="modal-cost__content">
-      <img class="modal-cost__image" src="" alt="">
-      <button class="modal-cost__btn-close" type="button">x</button>
-   </div>
+    <div class="modal-cost__content">
+        <img class="modal-cost__image" src="" alt="">
+        <button class="modal-cost__btn-close" type="button">x</button>
+    </div>
 </div>
 <?php get_footer(); ?>
