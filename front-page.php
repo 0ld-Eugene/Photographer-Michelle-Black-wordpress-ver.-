@@ -11,9 +11,12 @@
         endwhile;
     endif;
     ?>
+    
+    <?php
+    render_theme_section('hero', 'hero_');
+    render_theme_section('gallery', 'gallery_');
+    ?>
 
-    <?php get_template_part('templates/hero'); ?>
-    <?php get_template_part('templates/gallery'); ?>
     <?php get_template_part('templates/story'); ?>
     <?php get_template_part('templates/about'); ?>
     <?php get_template_part('templates/stages'); ?>
