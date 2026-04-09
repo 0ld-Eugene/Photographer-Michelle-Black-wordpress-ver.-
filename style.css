@@ -81,8 +81,8 @@ table {
 }
 
 @font-face {
-  font-family: "Druk Text Wide Trial";
-  src: url("./fonts/DrukTextWide-Bold-Trial.woff2") format("woff2"), url("./fonts/DrukTextWide-Bold-Trial.woff") format("woff");
+  font-family: "main-text-font";
+  src: url("./fonts/main-text-font.woff2") format("woff2"), url("./fonts/main-text-font.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -135,7 +135,7 @@ body::-webkit-scrollbar {
 }
 
 body {
-  font-family: "Druk Text Wide Trial", sans-serif;
+  font-family: "main-text-font", sans-serif;
   font-weight: 700;
   font-style: normal;
   font-size: 0.875rem;
